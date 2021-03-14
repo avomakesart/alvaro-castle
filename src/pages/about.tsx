@@ -1,17 +1,12 @@
 import NextLink from 'next/link';
 import React from 'react';
 import { Container } from '../components';
+import { Card } from '../components/Card/Card';
 import { Tabs } from '../components/Tabs/Tabs';
 
 interface aboutProps {}
 
 const About: React.FC<aboutProps> = ({}) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   return (
     <Container title='About'>
@@ -33,49 +28,26 @@ const About: React.FC<aboutProps> = ({}) => {
         <h1 className='text-5xl text-white text-left  mb-16'>
           Professional Skills
         </h1>
-        <Tabs color='white' />
+        <Tabs color='white' vertical />
       </div>
 
       <div className='mt-32'>
         <h1 className='text-5xl text-white text-left  mb-16'>Experience</h1>
-
-        <div className='container'>
-          <div className='container__item container__item-header'>
-            <h1>
-              Kurt Davenport, <br /> Graphic Design
-            </h1>
-          </div>
-
-          <div className='container__item container__item-1'>
-            <h1 className='container__item-title'>
-              <a href='project.html'>Asterisks</a>
-            </h1>
-          </div>
-          <div className='container__item container__item-2'>
-            <h1 className='container__item-title'>
-              <a href='project.html'>Unlocked</a>
-            </h1>
-          </div>
-          <div className='container__item container__item-3'>
-            <h1 className='container__item-title'>
-              <a href='project.html'>Offbeat</a>
-            </h1>
-          </div>
-          <div className='container__item container__item-4'>
-            <h1 className='container__item-title'>
-              <a href='project.html'>Brutal</a>
-            </h1>
-          </div>
-          <div className='container__item container__item-5'>
-            <h1 className='container__item-title'>
-              <a href='project.html'>Mouthwash</a>
-            </h1>
-          </div>
-        </div>
       </div>
 
       <div className='mt-32'>
         <h1 className='text-5xl text-white text-left  mb-16'>Certificates</h1>
+        <div className='grid grid-cols-3 gap-4'>
+          <div>
+            <Card />
+          </div>
+          <div>
+            <Card />
+          </div>
+          <div>
+            <Card />
+          </div>
+        </div>
       </div>
 
       <div className='mt-32 flex justify-center'>

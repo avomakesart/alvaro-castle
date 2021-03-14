@@ -3,17 +3,21 @@ import { Image } from '..';
 
 interface TabsProps {
   color: string;
+  vertical?: boolean;
 }
 
-export const Tabs: React.FC<TabsProps> = ({ color }) => {
+// TODO: Make this component reusable.
+export const Tabs: React.FC<TabsProps> = ({ color, vertical }) => {
   const [openTab, setOpenTab] = useState(1);
 
   return (
     <>
       <div className='flex flex-wrap'>
-        <div className='w-full'>
+        <div className={`w-full ${vertical && 'flex'}`}>
           <ul
-            className='flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row'
+            className={`flex mb-0 list-none flex-wrap pt-3 pb-4 ${
+              vertical ? 'flex-col' : 'flex-row'
+            }`}
             role='tablist'
           >
             <li className='-mb-px mr-2 last:mr-0 flex-auto text-center'>
